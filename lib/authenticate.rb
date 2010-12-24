@@ -32,6 +32,11 @@ module EcoAppsAuth
         session[:current_user_id]
       end
 
+      def current_user_roles
+        return [] if current_user_id.blank? or session[:current_user_roles].blank?
+        YAML.load session[:current_user_roles]
+      end
+
       protected
 
       def login_required
@@ -40,20 +45,28 @@ module EcoAppsAuth
 
       def check_access_right
         unless has_page_right?(params[:controller])
-          render :status => 403
+          render :text => "Access Denied", :status => 304
         end
       end
 
       def login_path
-        full_path_of(EcoApps.current.login_path || "#{EcoApps.master_url}/signin")
+        url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_url}/signin")
+        options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login)}
+        options[:verify] = true if EcoApps.current.verify
+        URI.parse(url).add_query(options).to_s
       end
 
       private
+
       def has_page_right?(controller)
-       
+        path = [EcoApps.current.name, controller].join("/")
+        roles_of_path = EcoAppsRoleRight.where(["path = ?", path]).select("distinct role_id").map(&:role_id)
+        (current_user_roles.map(&:first) & roles_of_path).size > 0
       end
 
-
+      def page_after_login
+        full_path_of(EcoApps.current.callback_after_login) || request.url
+      end
     end
   end
 end

@@ -1,4 +1,6 @@
-class RightService < MasterService
+class RightService < ActiveResource::Base
+  self.site = EcoApps.master_app
+
   class << self
     def reset_rights
       

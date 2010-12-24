@@ -8,17 +8,19 @@
   # other_api:
 
 # mock and cached settings for other app (basically used in development environment)
-# cached_config:
-#   pet:  #other app's name
-#     url: http://localhost:3001
-#     database:
-#       adapter: mysql
-#       encoding: utf8
-#       database: pet_development
-#       host: localhost
-#       user: root
-#       password: 
-#     other app's settings
+login_path: /user/login
+
+cached_config:
+  master_app_name:  #other app's name
+    url: http://localhost:3001
+    database:
+      test:
+        adapter: mysql
+        database: eco_apps_auth_test
+        username: root
+        password: root
+        pool: 5
+        timeout: 5000
 
 # columns needed for readonly models in test
 # readonly_for_test:
