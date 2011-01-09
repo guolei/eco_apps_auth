@@ -1,2 +1,6 @@
-class User < ActiveRecord::Base
+class User < EcoAppsProfile
+  
+  def user_method
+    true
+  end
 end

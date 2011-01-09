@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101217031540) do
+ActiveRecord::Schema.define(:version => 20110105013434) do
+
+  create_table "profiles", :force => true do |t|
+    t.string   "login"
+    t.string   "mail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rights", :force => true do |t|
     t.string   "name"
@@ -23,6 +30,12 @@ ActiveRecord::Schema.define(:version => 20101217031540) do
     t.integer  "role_id"
     t.integer  "right_id"
     t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

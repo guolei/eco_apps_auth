@@ -19,13 +19,13 @@ module EcoAppsAuth
 
     module InstanceMethods
       def self.included(base)
-        base.helper_method :current_user, :current_user_id
+        base.helper_method :current_user, :current_user_id, :current_user_roles
       end
 
       def current_user
         return @current_user if @current_user.present?
         return nil if current_user_id.blank?
-        @current_user = IdpProfile.get_user(current_user_id)
+        @current_user = EcoAppsProfile.user_class.find_by_id(current_user_id)
       end
 
       def current_user_id
@@ -38,6 +38,12 @@ module EcoAppsAuth
       end
 
       protected
+      
+      def set_current_user(profile)
+        profile = EcoAppsProfile.find_by_id(profile) if profile.instance_of?(Fixnum)
+        session[:current_user_id] = profile.id
+        session[:current_user_roles] = YAML.dump(profile.roles.map{|t| [t.id, t.name]})
+      end
 
       def login_required
         redirect_to login_path if current_user_id.blank?
@@ -51,7 +57,8 @@ module EcoAppsAuth
 
       def login_path
         url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_url}/signin")
-        options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login)}
+        session[:verify_token] = token = EcoApps::Util.random_salt(10)
+        options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login), :verify_url => EcoApps::Util.escape(verify_user_url), :token => token}
         options[:verify] = true if EcoApps.current.verify
         URI.parse(url).add_query(options).to_s
       end
