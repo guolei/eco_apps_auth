@@ -1,4 +1,4 @@
-class User < EcoAppsProfile
+class User < EcoApps::Profile
   
   def user_method
     true

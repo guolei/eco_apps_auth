@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe Profile do
+describe EcoApps::Profile do
   before do 
-    @profile = Factory(:eco_apps_profile, :login => "test")
+    @profile = Factory(:profile, :login => "test")
   end
   
   describe "EcoAppsProfile" do
     it "should read data from profiles" do
-      EcoAppsProfile.first.login.should == "test"
+      EcoApps::Profile.first.login.should == "test"
     end
     
     it "should delegate methods to profile_by_service" do
@@ -33,7 +33,7 @@ describe Profile do
     end
     
     it "should recognize user_class" do
-      EcoAppsProfile.user_class.should == User
+      EcoApps::Profile.user_class.should == User
     end
   end
 end

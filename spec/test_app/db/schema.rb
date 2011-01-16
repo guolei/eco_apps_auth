@@ -10,11 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110105013434) do
+ActiveRecord::Schema.define(:version => 20110115234815) do
 
   create_table "profiles", :force => true do |t|
     t.string   "login"
-    t.string   "mail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

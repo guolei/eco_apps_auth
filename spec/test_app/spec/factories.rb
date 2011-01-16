@@ -1,4 +1,10 @@
-[:eco_apps_role_right, :role_right, :right, :eco_apps_profile, :profile, :role].each do |obj|
+[:right, :role].each do |obj|
   Factory.define obj do |t|
   end
+end
+
+Factory.define :profile, :class=> "EcoApps::Profile" do |obj|
+end
+
+Factory.define :role_right, :class=> "EcoApps::RoleRight" do |obj|
 end

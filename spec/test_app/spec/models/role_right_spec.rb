@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RoleRight do
+describe EcoApps::RoleRight do
 
   it "should have records" do
    

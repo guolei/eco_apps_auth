@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ArticlesController do
 
   before do
-    @profile = Factory(:eco_apps_profile, :login => "user")
+    @profile = Factory(:profile, :login => "user")
   end
 
   describe "login_required" do
@@ -30,7 +30,7 @@ describe ArticlesController do
     it "should be access forbidden" do
       request.session[:current_user_id] = 1
       request.session[:current_user_roles] = YAML.dump([[1,"admin"]])
-      Factory(:eco_apps_role_right, :role_id => 1, :right_id => 2, :path => "test_app/articles")
+      Factory(:role_right, :role_id => 1, :right_id => 2, :path => "test_app/articles")
       controller.send(:has_page_right?, "articles").should be_true
       controller.send(:has_page_right?, "admin/articles").should be_false
     end
@@ -54,7 +54,7 @@ describe ArticlesController do
     it "should set current_user_id and current_user_roles" do
       role = Factory(:role, :name=>"admin")
       @profile.stub!(:roles).and_return([role])
-      EcoAppsProfile.stub!(:find_by_id).and_return(@profile)
+      EcoApps::Profile.stub!(:find_by_id).and_return(@profile)
       controller.send(:set_current_user, @profile.id)
       controller.current_user.login.should == "user"
       controller.current_user_roles.should == [[role.id, "admin"]]

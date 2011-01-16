@@ -25,7 +25,7 @@ module EcoAppsAuth
       def current_user
         return @current_user if @current_user.present?
         return nil if current_user_id.blank?
-        @current_user = EcoAppsProfile.user_class.find_by_id(current_user_id)
+        @current_user = EcoApps::Profile.user_class.find_by_id(current_user_id)
       end
 
       def current_user_id
@@ -40,7 +40,7 @@ module EcoAppsAuth
       protected
       
       def set_current_user(profile)
-        profile = EcoAppsProfile.find_by_id(profile) if profile.instance_of?(Fixnum)
+        profile = EcoApps::Profile.find_by_id(profile) if profile.instance_of?(Fixnum)
         session[:current_user_id] = profile.id
         session[:current_user_roles] = YAML.dump(profile.roles.map{|t| [t.id, t.name]})
       end
@@ -67,7 +67,7 @@ module EcoAppsAuth
 
       def has_page_right?(controller)
         path = [EcoApps.current.name, controller].join("/")
-        roles_of_path = EcoAppsRoleRight.where(["path = ?", path]).select("distinct role_id").map(&:role_id)
+        roles_of_path = EcoApps::RoleRight.where(["path = ?", path]).select("distinct role_id").map(&:role_id)
         (current_user_roles.map(&:first) & roles_of_path).size > 0
       end
 
