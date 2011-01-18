@@ -51,15 +51,17 @@ module EcoAppsAuth
 
       def check_access_right
         unless has_page_right?(params[:controller])
-          render :text => "Access Denied", :status => 304
+          render :text => "Access Denied", :status => 403
         end
       end
 
       def login_path
         url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_url}/signin")
-        session[:verify_token] = token = EcoApps::Util.random_salt(10)
-        options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login), :verify_url => EcoApps::Util.escape(verify_user_url), :token => token}
-        options[:verify] = true if EcoApps.current.verify
+        options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login)}
+        if Rails.env == "development" or EcoApps.current.share_session == false
+          session[:verify_token] = token = EcoApps::Util.random_salt(10)
+          options.merge!({:verify_url => EcoApps::Util.escape(verify_user_url), :token => token})
+        end
         URI.parse(url).add_query(options).to_s
       end
 

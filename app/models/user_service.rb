@@ -1,5 +1,5 @@
 class UserService < ActiveResource::Base
-  self.site = EcoApps.master_app
+  self.site = EcoApps.master_app_url
   
   def update_profiles(options = {})
     options.each{|key,value| send(key.to_s + "=", value)}

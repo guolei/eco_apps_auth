@@ -5,7 +5,7 @@ describe RightService do
   describe "controllers" do
 
     it "should return all controllers" do
-      (RightService.controllers - ["articles", "admin/articles", "eco_apps_user_services"]).should be_blank
+      RightService.controllers.sort.should == ["articles", "admin/articles"].sort
     end
 
   end

@@ -37,8 +37,21 @@ describe ArticlesController do
   end
 
   describe "login_path" do
-    it "should be login_path if login_path is set" do
+    before do
       EcoApps::Util.stub!(:random_salt).and_return("fd7347a53d09c75d299a")
+    end
+    
+    it "should be just locale and target for normal request" do
+      controller.send(:login_path).should == "/user/login?locale=en&target=http%253A%252F%252Ftest.host"
+    end
+    
+    it "should include verify and token in development mode" do
+      Rails.stub!(:env).and_return("development")
+      controller.send(:login_path).should == "/user/login?locale=en&target=http%253A%252F%252Ftest.host&token=fd7347a53d09c75d299a&verify_url=http%253A%252F%252Ftest.host%252Fverify_user"
+    end
+    
+    it "should include verify and token if share session is false" do
+      EcoApps.current.stub!(:share_session).and_return(false)
       controller.send(:login_path).should == "/user/login?locale=en&target=http%253A%252F%252Ftest.host&token=fd7347a53d09c75d299a&verify_url=http%253A%252F%252Ftest.host%252Fverify_user"
     end
   end

@@ -9,9 +9,10 @@ describe ArticlesHelper do
       end
       
       it "should limit access to certain roles" do
-        helper.stub!(:current_user).and_return(Factory(:profile))
+        helper.stub!(:current_user_id).and_return(1)
         helper.stub!(:current_user_roles).and_return([[1, "admin"], [2, "teacher"]])
         helper.limit_access_to(:admin){"content"}.should == "content"
+        helper.limit_access_to(2){"content"}.should == "content"
         helper.limit_access_to(:admin, :teacher){"content"}.should == "content"
         helper.limit_access_to(:root){"content"}.should == nil
       end
