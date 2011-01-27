@@ -37,7 +37,7 @@ module AuthViewsHelper
   end
   
   def top_menu_content
-    return "" if Rails.env == "test"
+    return "" if Rails.env.test?
     with_user do
       key = IdpLinkGroup.navlinks_cache_key_for(current_user)
       c = read_fragment(key)

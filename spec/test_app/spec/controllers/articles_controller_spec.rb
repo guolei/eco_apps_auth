@@ -46,7 +46,7 @@ describe ArticlesController do
     end
     
     it "should include verify and token in development mode" do
-      Rails.stub!(:env).and_return("development")
+      Rails.env.stub!(:development?).and_return(true)
       controller.send(:login_path).should == "/user/login?locale=en&target=http%253A%252F%252Ftest.host&token=fd7347a53d09c75d299a&verify_url=http%253A%252F%252Ftest.host%252Fverify_user"
     end
     
