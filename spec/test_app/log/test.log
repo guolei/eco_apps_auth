@@ -6409,3 +6409,421 @@ Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 110.9ms)
   [1m[35mSQL (1.2ms)[0m  ROLLBACK
   [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (4.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT DATABASE() as db
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Redirected to http://test.host/articles
+Completed 302 Found in 1ms
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c3211a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 90ms (Views: 3.0ms | ActiveRecord: 2.0ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>9, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (4.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.3ms)[0m  describe `profiles`
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('test', '2011-01-19 21:24:40', '2011-01-19 21:24:40')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mEcoApps::Profile Load (0.9ms)[0m  [1mSELECT `profiles`.* FROM `profiles` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('test', '2011-01-19 21:24:40', '2011-01-19 21:24:40')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('test', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Redirected to http://test.host/user/login?locale=en&target=http%253A%252F%252Ftest.host%252Farticles
+Completed 302 Found in 1ms
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES (NULL, '2011-01-19 21:24:40', '2011-01-19 21:24:40')[0m
+  [1m[35mSQL (1.6ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 17.3ms)
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (2.3ms)[0m  [1mdescribe `role_rights`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `role_rights` (`right_id`, `path`, `role_id`, `created_at`, `updated_at`) VALUES (2, 'test_app/articles', 1, '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mEcoApps::RoleRight Load (0.8ms)[0m  SELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/articles')
+  [1m[36mEcoApps::RoleRight Load (0.7ms)[0m  [1mSELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/admin/articles')[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (2.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE (`profiles`.`id` = 218) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `roles`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `roles` (`name`, `created_at`, `updated_at`) VALUES ('admin', '2011-01-19 21:24:40', '2011-01-19 21:24:40')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35mSQL (4.0ms)[0m  SELECT DATABASE() as db
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (21.3ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Redirected to http://test.host/articles
+Completed 302 Found in 1ms
+  [1m[35mSQL (2.6ms)[0m  ROLLBACK
+  [1m[36mSQL (3.0ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c3211a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 181ms (Views: 19.4ms | ActiveRecord: 31.7ms)
+  [1m[35mSQL (11.4ms)[0m  ROLLBACK
+  [1m[36mSQL (5.0ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>9, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 16.4ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  BEGIN
+  [1m[36mSQL (2.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (16.6ms)[0m  describe `profiles`
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('test', '2011-01-24 04:02:39', '2011-01-24 04:02:39')[0m
+  [1m[35mSQL (39.5ms)[0m  COMMIT
+  [1m[36mEcoApps::Profile Load (0.9ms)[0m  [1mSELECT `profiles`.* FROM `profiles` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('test', '2011-01-24 04:02:39', '2011-01-24 04:02:39')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('test', '2011-01-24 04:02:39', '2011-01-24 04:02:39')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:39', '2011-01-24 04:02:39')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Redirected to http://test.host/user/login?locale=en&target=http%253A%252F%252Ftest.host%252Farticles
+Completed 302 Found in 1ms
+  [1m[36mSQL (22.9ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:39', '2011-01-24 04:02:39')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES (NULL, '2011-01-24 04:02:39', '2011-01-24 04:02:39')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Completed 200 OK in 52ms (Views: 52.0ms | ActiveRecord: 92.4ms)
+  [1m[36mSQL (40.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:39', '2011-01-24 04:02:39')
+  [1m[36mSQL (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.6ms)[0m  BEGIN
+  [1m[36mSQL (41.9ms)[0m  [1mdescribe `role_rights`[0m
+  [1m[35mAREL (22.8ms)[0m  INSERT INTO `role_rights` (`path`, `created_at`, `right_id`, `updated_at`, `role_id`) VALUES ('test_app/articles', '2011-01-24 04:02:39', 2, '2011-01-24 04:02:39', 1)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mEcoApps::RoleRight Load (0.8ms)[0m  SELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/articles')
+  [1m[36mEcoApps::RoleRight Load (0.5ms)[0m  [1mSELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/admin/articles')[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (1.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (10.0ms)[0m  BEGIN
+  [1m[36mAREL (7.8ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:40', '2011-01-24 04:02:40')[0m
+  [1m[35mSQL (1.9ms)[0m  COMMIT
+  [1m[36mSQL (3.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (5.5ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:40', '2011-01-24 04:02:40')
+  [1m[36mSQL (60.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:40', '2011-01-24 04:02:40')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:40', '2011-01-24 04:02:40')
+  [1m[36mSQL (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE (`profiles`.`id` = 230) LIMIT 1
+  [1m[36mSQL (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (2.6ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `profiles` (`login`, `updated_at`, `created_at`) VALUES ('user', '2011-01-24 04:02:40', '2011-01-24 04:02:40')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (41.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.5ms)[0m  [1mdescribe `roles`[0m
+  [1m[35mAREL (3.7ms)[0m  INSERT INTO `roles` (`created_at`, `updated_at`, `name`) VALUES ('2011-01-24 04:02:40', '2011-01-24 04:02:40', 'admin')
+  [1m[36mSQL (2.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT DATABASE() as db
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Redirected to http://test.host/articles
+Completed 302 Found in 1ms
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c3211a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 93ms (Views: 4.6ms | ActiveRecord: 2.2ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>9, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  BEGIN
+  [1m[36mSQL (3.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (4.4ms)[0m  describe `profiles`
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'test', '2011-01-27 07:18:20')[0m
+  [1m[35mSQL (1.2ms)[0m  COMMIT
+  [1m[36mEcoApps::Profile Load (0.8ms)[0m  [1mSELECT `profiles`.* FROM `profiles` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'test', '2011-01-27 07:18:20')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'test', '2011-01-27 07:18:20')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Redirected to http://test.host/user/login?locale=en&target=http%253A%252F%252Ftest.host%252Farticles
+Completed 302 Found in 2ms
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', NULL, '2011-01-27 07:18:20')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 18.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `role_rights`[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO `role_rights` (`path`, `created_at`, `role_id`, `updated_at`, `right_id`) VALUES ('test_app/articles', '2011-01-27 07:18:20', 1, '2011-01-27 07:18:20', 2)
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mEcoApps::RoleRight Load (1.7ms)[0m  SELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/articles')
+  [1m[36mEcoApps::RoleRight Load (1.5ms)[0m  [1mSELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/admin/articles')[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')
+  [1m[36mSQL (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE (`profiles`.`id` = 242) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`updated_at`, `login`, `created_at`) VALUES ('2011-01-27 07:18:20', 'user', '2011-01-27 07:18:20')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.3ms)[0m  [1mdescribe `roles`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `roles` (`created_at`, `updated_at`, `name`) VALUES ('2011-01-27 07:18:20', '2011-01-27 07:18:20', 'admin')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT DATABASE() as db
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Redirected to http://test.host/articles
+Completed 302 Found in 1ms
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c3211a207c", "uid"=>10, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 93ms (Views: 2.7ms | ActiveRecord: 1.8ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by EcoAppsUserServicesController#verify as HTML
+  Parameters: {"token"=>"27ca21c876c4601a207c", "uid"=>9, "encrypt"=>"c12424733daf37ec18a6e1bfeb5fb18034c48977", "target"=>"/articles"}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.2ms)[0m  describe `profiles`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('test', '2011-01-27 07:22:15', '2011-01-27 07:22:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mEcoApps::Profile Load (1.3ms)[0m  [1mSELECT `profiles`.* FROM `profiles` LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('test', '2011-01-27 07:22:15', '2011-01-27 07:22:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('test', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Redirected to http://test.host/user/login?locale=en&target=http%253A%252F%252Ftest.host%252Farticles
+Completed 302 Found in 1ms
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES (NULL, '2011-01-27 07:22:15', '2011-01-27 07:22:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  Processing by ArticlesController#index as HTML
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 14.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (3.2ms)[0m  [1mdescribe `role_rights`[0m
+  [1m[35mAREL (1.1ms)[0m  INSERT INTO `role_rights` (`role_id`, `updated_at`, `path`, `created_at`, `right_id`) VALUES (1, '2011-01-27 07:22:15', 'test_app/articles', '2011-01-27 07:22:15', 2)
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mEcoApps::RoleRight Load (1.2ms)[0m  SELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/articles')
+  [1m[36mEcoApps::RoleRight Load (0.5ms)[0m  [1mSELECT distinct role_id FROM `role_rights` WHERE (path = 'test_app/admin/articles')[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE (`profiles`.`id` = 254) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (1.3ms)[0m  INSERT INTO `profiles` (`login`, `created_at`, `updated_at`) VALUES ('user', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.3ms)[0m  [1mdescribe `roles`[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO `roles` (`name`, `updated_at`, `created_at`) VALUES ('admin', '2011-01-27 07:22:15', '2011-01-27 07:22:15')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK

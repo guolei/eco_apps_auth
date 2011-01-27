@@ -3,13 +3,14 @@ require 'action_controller'
 require 'eco_apps'
 
 require 'authenticate'
+require 'const'
 
 module EcoAppsAuth
   class Engine < Rails::Engine
 
     initializer "include_hacks" do
       ActionController::Base.send(:include, EcoAppsAuth::Authenticate)
-      ActionView::Base.send(:include, AuthViewsHelper)
+      ActionView::Base.send(:include, ::AuthViewsHelper)
     end
     
     initializer "reset_rights", :after=> :disable_dependency_loading do

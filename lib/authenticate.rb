@@ -25,7 +25,8 @@ module EcoAppsAuth
       def current_user
         return @current_user if @current_user.present?
         return nil if current_user_id.blank?
-        @current_user = EcoApps::Profile.user_class.find_by_id(current_user_id)
+        klass = EcoApps.current.user_class.try(:constantize) || EcoApps::Profile.user_class
+        @current_user = klass.find_by_id(current_user_id)
       end
 
       def current_user_id
@@ -56,7 +57,7 @@ module EcoAppsAuth
       end
 
       def login_path
-        url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_url}/signin")
+        url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_app_url}/signin")
         options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login)}
         if Rails.env == "development" or EcoApps.current.share_session == false
           session[:verify_token] = token = EcoApps::Util.random_salt(10)

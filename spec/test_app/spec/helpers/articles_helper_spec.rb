@@ -17,5 +17,11 @@ describe ArticlesHelper do
         helper.limit_access_to(:root){"content"}.should == nil
       end
     end
+    
+    describe "layout" do
+      it "should generate base layout" do
+        helper.base_layout{"hello"}.should == "helo"
+      end
+    end
   end
 end
