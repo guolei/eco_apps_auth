@@ -57,7 +57,7 @@ module EcoAppsAuth
       end
 
       def login_path
-        url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_app_url}/signin")
+        url = full_path_of(EcoApps.current.login_path || "#{EcoApps.master_app}/signin")
         options = {:locale => I18n.locale, :target => EcoApps::Util.escape(page_after_login)}
         if Rails.env.development? or EcoApps.current.share_session == false
           session[:verify_token] = token = EcoApps::Util.random_salt(10)
