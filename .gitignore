@@ -1,3 +1,5 @@
 nbproject
 eco_apps_auth-0.2.0.gem
-
+spec/test_app/log/*.log
+spec/test_app/Gemfile.lock
+spec/test_app/db/schema.rb
