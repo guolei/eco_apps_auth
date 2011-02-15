@@ -7,7 +7,12 @@ class RightService < ActiveResource::Base
     end
 
     def controllers
-      ApplicationController.subclasses.map(&:controller_path) - ["eco_apps_user_services"]
+      controllers_path(ApplicationController.subclasses) - ["eco_apps_user_services"]
+    end
+    
+    private
+    def controllers_path(controllers)
+      controllers.map{|c| c.subclasses.blank? ? c.controller_path : controllers_path(c.subclasses)}.flatten
     end
   end
 end
