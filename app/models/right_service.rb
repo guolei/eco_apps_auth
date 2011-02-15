@@ -7,7 +7,7 @@ class RightService < ActiveResource::Base
     end
 
     def controllers
-      Rails.application.routes.named_routes.map{|t| t.last.requirements[:controller]}.uniq - ["rails/info", "eco_apps_user_services"]
+      ApplicationController.subclasses.map(&:controller_path) - ["eco_apps_user_services"]
     end
   end
 end

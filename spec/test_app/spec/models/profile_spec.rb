@@ -7,7 +7,7 @@ describe EcoApps::Profile do
   
   describe "EcoAppsProfile" do
     it "should read data from profiles" do
-      EcoApps::Profile.first.login.should == "test"
+      EcoApps::Profile.find_by_login("test").should_not be_blank
     end
     
     it "should delegate methods to profile_by_service" do
