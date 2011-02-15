@@ -63,6 +63,9 @@ module EcoAppsAuth
           session[:verify_token] = token = EcoApps::Util.random_salt(10)
           options.merge!({:verify_url => EcoApps::Util.escape(verify_user_url), :token => token})
         end
+        unless url =~ /^http/
+          url.insert(0, EcoApps.current_base_url)
+        end
         URI.parse(url).add_query(options).to_s
       end
 
